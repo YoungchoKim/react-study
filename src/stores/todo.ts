@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { combine } from 'zustand/middleware'
-import axios from axios
+import axios from 'axios'
 type Todos = Todo[] // 할 일 목록
 interface Todo {
   id: string // 할 일 ID
@@ -18,15 +18,16 @@ export const useTodoStore = create(
     },
     () => ({
       fetchTodos: async () => {
-        const {data} = axios({
-            url: 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos',
-            method: 'GET',
-            headers: {
-                "content-type": "application/json",
-                "apikey": import.meta.env.VITE_APIKEY,
-                "username": import.meta.env.VITE_USERNAME
-              }
+        const { data } = await axios({
+          url: 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos',
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json',
+            apikey: import.meta.env.VITE_APIKEY,
+            username: import.meta.env.VITE_USERNAME
+          }
         })
+        console.log(data)
       }
     })
   )
