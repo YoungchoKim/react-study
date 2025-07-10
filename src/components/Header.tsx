@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router'
+import { NavLink } from 'react-router'
 const navigations = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },

@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import { useIsActiveStore } from '@/stores/isActive'
 export default function Child() {
   const isActive = useIsActiveStore(state => state.isActive)

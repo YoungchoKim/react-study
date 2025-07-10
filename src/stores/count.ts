@@ -1,11 +1,5 @@
 import { create } from 'zustand'
-import {
-  combine,
-  subscribeWithSelector,
-  persist,
-  createJSONStorage,
-  devtools
-} from 'zustand/middleware'
+import { combine, subscribeWithSelector, persist } from 'zustand/middleware'
 
 export const useCountStore = create(
   persist(

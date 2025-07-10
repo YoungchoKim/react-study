@@ -6,7 +6,7 @@ export const useIsActiveStore = create(
     {
       isActive: true
     },
-    (set, get) => {
+    set => {
       return {
         toggleActive: () => {
           //   const { isActive } = get()
