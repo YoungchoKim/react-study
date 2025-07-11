@@ -6,6 +6,7 @@ const navigations = [
   { to: '/about', label: 'About' },
   { to: '/movies', label: 'Movies' },
   { to: '/movies/tt4736550', label: 'The Great Hack' },
+  { to: '/todos', label: 'Todos' },
   { to: '/signin', label: 'Sign In' }
 ]
 // a tag는 이동할때 새로고침된다. Link를 사용해야한다.
@@ -26,7 +27,7 @@ export default function Header() {
     <header>
       <nav className="flex items-center gap-2">
         {navigations.map(nav => {
-          const isSignIn = nav.to === 'signin'
+          const isSignIn = nav.to === '/signin'
           if (isSignIn && token) return null
           return (
             <NavLink
